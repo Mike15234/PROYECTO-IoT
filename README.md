@@ -2,9 +2,8 @@
 
 **Descripción**
 
-Este proyecto de aplicación IoT recopila datos de temperatura, humedad, presión y altitud mediante una tarjeta ESP-32 conectada a un sensor DHT-11 y un BMP-180. Los datos se envían a la nube de Thingspeak, donde se almacenan en un dashboard privado. El dashboard público permite a los clientes ver los datos actuales de forma amigable.
+Este proyecto de aplicación IoT recopila datos de temperatura, humedad, presión y altitud mediante una tarjeta ESP-32 conectada a un sensor DHT-11 y un BMP-180. Los datos se envían a la nube de Thingspeak, donde se almacenan en un dashboard privado en el cual se realiza el análisis por parte del modulo de reglas el cual activa el sistema de alertas y envía un mensaje de texto al número del cliente si la temperatura supera los 29 grados o baja de los 18 grados Para lo cual se utiliza la API de la red de Twilio. Por otra parte, se tiene un dashboard público en el cual se permite a los clientes ver los datos actuales de forma amigable.
 
-El proyecto también incluye un sistema de alertas que envía un mensaje de texto al número del cliente si la temperatura supera los 29 grados o baja de los 18 grados. Para ello, se utiliza la API de la red de Twilio.
 
 **Objetivos**
 
@@ -29,8 +28,8 @@ Para ejecutar este proyecto, se necesita lo siguiente:
 
 Para instalar el proyecto, siga estos pasos:
 
-1. Descargue el código fuente del repositorio de GitHub.
-2. Instale las dependencias necesarias.
+1. Descargue el código fuente localizado en la documentación del repositorio de GitHub.
+2. Instale las librerías y dependencias necesarias.
 3. Configure la tarjeta ESP-32.
 4. Suba el código fuente a la tarjeta ESP-32.
 
@@ -39,9 +38,9 @@ Para instalar el proyecto, siga estos pasos:
 Una vez que el proyecto esté instalado, siga estos pasos para utilizarlo:
 
 1. Conecte la tarjeta ESP-32 a una fuente de alimentación.
-2. Espere a que la tarjeta ESP-32 se inicie.
-3. Abra el dashboard publico de Thingspeak.
-4. Vea los datos registrados.
+2. Espere a que la tarjeta ESP-32 se inicie y se conecte a WiFi.
+3. Abra el dashboard de Thingspeak.
+4. Vea los datos actuales en el dashboard público o solicite los datos registrados desde el dashboard privado.
 
 **Documentación**
 
@@ -56,5 +55,5 @@ La documentación del proyecto se encuentra en la carpeta DOCUMENTACION del repo
 El siguiente es un ejemplo de un mensaje de texto que se envía como alerta:
 
 ```
-¡Alerta! La temperatura ha superado los 29 grados. Hidratate
+¡Alerta! La temperatura ha superado los 29 grados. Hidratate.
 ```
