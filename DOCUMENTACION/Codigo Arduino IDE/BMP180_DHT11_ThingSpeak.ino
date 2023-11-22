@@ -7,11 +7,11 @@
 
 #define pin1 15       //Pin del DHT11.
 
-const char* ssid = "RedSoporte";                        //SSID de vuestro router.
-const char* password = "MR.152345";                //Contraseña de vuestro router.
+const char* ssid = "RED";                        //SSID de vuestro router.
+const char* password = "CONTRASEÑA";                //Contraseña de vuestro router.
 
-unsigned long channelID = 2276395;                //ID de vuestro canal.
-const char* WriteAPIKey = "EKZJ41FS6F170WW0";     //Write API Key de vuestro canal.
+unsigned long channelID = ;                //ID de vuestro canal.
+const char* WriteAPIKey = "";     //Write API Key de vuestro canal.
 
 WiFiClient cliente;
 
@@ -39,15 +39,13 @@ void setup() {
 
 void loop() {
 
-  delay(2000);
+  delay(20000);
   leerdht1();
-
-  delay(2000);
   leerbmp();
 
   ThingSpeak.writeFields(channelID,WriteAPIKey);
   Serial.println("Datos enviados a ThingSpeak!");
-  delay(3500);
+  Serial.println("-----------------------");  
 }
 
 void leerdht1() {
@@ -70,8 +68,6 @@ void leerdht1() {
   Serial.print(h1);
   Serial.println(" %."); 
 
-  Serial.println("-----------------------");
-
   ThingSpeak.setField (1,t1);
   ThingSpeak.setField (2,h1);
 }
@@ -88,8 +84,6 @@ void leerbmp() {
   Serial.print("Altitud bmp: ");
   Serial.print(altitud);
   Serial.println(" metros.");
-
-  Serial.println("-----------------------");  
 
   ThingSpeak.setField (5,presion);
   ThingSpeak.setField (6,altitud);
